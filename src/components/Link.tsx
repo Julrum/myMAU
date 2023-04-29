@@ -1,20 +1,20 @@
-import * as React from "react";
-import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import { useRouter } from "next/router";
-import clsx from "clsx";
-import MuiLink, { LinkProps as MuiLinkProps } from "@mui/material/Link";
-import { styled } from "@mui/material/styles";
+import * as React from 'react';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
+import { useRouter } from 'next/router';
+import clsx from 'clsx';
+import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
+import { styled } from '@mui/material/styles';
 
-const Anchor = styled("a")({});
+const Anchor = styled('a')({});
 
 interface NextLinkComposedProps
-  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">,
+  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>,
     Omit<
       NextLinkProps,
-      "href" | "as" | "passHref" | "onMouseEnter" | "onClick" | "onTouchStart"
+      'href' | 'as' | 'passHref' | 'onMouseEnter' | 'onClick' | 'onTouchStart'
     > {
-  to: NextLinkProps["href"];
-  linkAs?: NextLinkProps["as"];
+  to: NextLinkProps['href'];
+  linkAs?: NextLinkProps['as'];
 }
 
 export const NextLinkComposed = React.forwardRef<
@@ -52,19 +52,19 @@ export const NextLinkComposed = React.forwardRef<
 
 export type LinkProps = {
   activeClassName?: string;
-  as?: NextLinkProps["as"];
-  href: NextLinkProps["href"];
-  linkAs?: NextLinkProps["as"];
+  as?: NextLinkProps['as'];
+  href: NextLinkProps['href'];
+  linkAs?: NextLinkProps['as'];
   noLinkStyle?: boolean;
-} & Omit<NextLinkComposedProps, "to" | "linkAs" | "href"> &
-  Omit<MuiLinkProps, "href">;
+} & Omit<NextLinkComposedProps, 'to' | 'linkAs' | 'href'> &
+  Omit<MuiLinkProps, 'href'>;
 
 const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   props,
-  ref
+  ref,
 ) {
   const {
-    activeClassName = "active",
+    activeClassName = 'active',
     as,
     className: classNameProps,
     href,
@@ -81,14 +81,14 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   } = props;
 
   const router = useRouter();
-  const pathname = typeof href === "string" ? href : href.pathname;
+  const pathname = typeof href === 'string' ? href : href.pathname;
   const className = clsx(classNameProps, {
     [activeClassName]: router.pathname === pathname && activeClassName,
   });
 
   const isExternal =
-    typeof href === "string" &&
-    (href.indexOf("http") === 0 || href.indexOf("mailto:") === 0);
+    typeof href === 'string' &&
+    (href.indexOf('http') === 0 || href.indexOf('mailto:') === 0);
 
   if (isExternal) {
     if (noLinkStyle) {
