@@ -25,6 +25,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
   return (
     <Html lang="en">
       <Head>
+        <meta name="title" content="My MAU" key="title" />
         <meta name="theme-color" content={theme.palette.background.default} />
         <link
           as="style"
