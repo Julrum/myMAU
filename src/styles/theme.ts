@@ -78,5 +78,12 @@ export const getDesignTokens = (mode: PaletteMode) => ({
         },
       },
     },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          padding: '20px',
+        },
+      },
+    },
   },
 });
