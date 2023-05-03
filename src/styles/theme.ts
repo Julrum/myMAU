@@ -48,6 +48,8 @@ export const getDesignTokens = (mode: PaletteMode) => ({
   transparent: 'rgba(255, 255, 255, 0)',
   typography: {
     fontFamily: [
+      '"Pretendard JP Variable"',
+      '"Pretendard JP"',
       '"Pretendard Variable"',
       'Pretendard',
       '-apple-system',
