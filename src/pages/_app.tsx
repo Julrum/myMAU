@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { CacheProvider, EmotionCache } from '@emotion/react';
+import { GlobalStyles } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import createEmotionCache from '@/styles/createEmotionCache';
 import { getDesignTokens } from '@/styles/theme';
-import { GlobalStyles } from '@mui/material';
+import { typography } from '@/styles/typography';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -57,6 +58,7 @@ const MyApp = ({
 }: MyAppProps) => {
   const theme = createTheme({
     ...getDesignTokens('light'),
+    ...typography,
   });
 
   return (
