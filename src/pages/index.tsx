@@ -35,8 +35,17 @@ const Home = () => {
 
   return (
     <>
-      <AppBar position="static" sx={{ height: 100 }}>
-        <Toolbar disableGutters sx={{ p: '40px 80px 20px 80px' }}>
+      <AppBar
+        position="static"
+        sx={{
+          height: { xs: 80, md: 100 },
+          backgroundColor: { xs: '#f4f6f8', md: '#ffffff' },
+        }}
+      >
+        <Toolbar
+          disableGutters
+          sx={{ p: { xs: '24px 20px', md: '40px 80px 20px 80px' } }}
+        >
           <Typography
             sx={{
               fontSize: 24,
@@ -51,10 +60,12 @@ const Home = () => {
             exclusive
             onChange={handleAlignment}
             aria-label="language"
+            sx={{ width: 108, height: 40 }}
           >
             <ToggleButton
               value="left"
               aria-label="left aligned"
+              sx={{ width: 54, height: 40, borderRadius: 4 }}
               onClick={() => {
                 router.push({ pathname, query }, asPath, { locale: 'ja' });
               }}
@@ -63,6 +74,7 @@ const Home = () => {
             </ToggleButton>
             <ToggleButton
               value="right"
+              sx={{ width: 54, height: 40, borderRadius: 4 }}
               aria-label="right aligned"
               onClick={() => {
                 router.push({ pathname, query }, asPath, { locale: 'ko' });
@@ -74,11 +86,20 @@ const Home = () => {
         </Toolbar>
       </AppBar>
       <Box component="main" sx={{ backgroundColor: '#f4f6f8', height: '100%' }}>
-        <Box sx={{ px: 10, py: 7.5 }}>
-          <Typography sx={{ fontWeight: 'bold', fontSize: 24, mb: 5 }}>
-            {t('title')}
+        <Box sx={{ px: { xs: 2.5, md: 10 }, py: { xs: 4, md: 7.5 } }}>
+          <Typography
+            sx={{ fontWeight: 'bold', fontSize: 24, mb: { xs: 2, md: 5 } }}
+          >
+            {t('title1')}
+            <br />
+            {t('title2')}
           </Typography>
-          <Box sx={{ height: 40, px: 2, py: 1 }}>
+          <Box
+            sx={{
+              height: { xs: 24, md: 40 },
+              p: { xs: '0 0 8px 0', md: '8px 16px' },
+            }}
+          >
             <Typography sx={{ fontSize: 16, lineHeight: 1.5 }}>
               운영시간표
             </Typography>
