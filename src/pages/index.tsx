@@ -46,15 +46,24 @@ const Home = () => {
           disableGutters
           sx={{ p: { xs: '24px 20px', md: '40px 80px 20px 80px' } }}
         >
-          <Typography
-            sx={{
-              fontSize: 24,
-              fontWeight: 900,
-              flexGrow: 1,
-            }}
-          >
-            MyMAU
-          </Typography>
+          <Box sx={{ flexGrow: 1, display: 'flex' }}>
+            <Typography
+              sx={{
+                fontSize: 24,
+                fontWeight: 600,
+              }}
+            >
+              my
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: 24,
+                fontWeight: 900,
+              }}
+            >
+              MAU
+            </Typography>
+          </Box>
           <ToggleButtonGroup
             value={alignment}
             exclusive
